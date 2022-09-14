@@ -81,9 +81,9 @@ params:
   tiles:
     enable: yes
     showcase:
-      - image: pic01.jpg
-        subtitle: Ipsum Dolor Sit Amet
-        title: Aliquam
+      - image: spices.jpg
+        subtitle: test page
+        title: TESTT
         url: blogs/aliquam
       - image: pic02.jpg
         subtitle: Feugiat Amet Tempus
@@ -94,17 +94,18 @@ params:
         title: Magna
         url: blogs/magna
       - image: pic04.jpg
-        subtitle: Nisl Sed Aliquam
-        title: Ipsum
-        url: blogs/ipsum
+        subtitle: All about me
+        title: My Biography
+        url: blogs/biography
       - image: pic05.jpg
-        subtitle: Ipsum Dolor Sit Amet
-        title: Consequat
-        url: blogs/ipsum
+        subtitle: Risk Returm
+        title: Analysis
+        url: blogs/risk_return
       - image: pic06.jpg
         subtitle: Feugiat Amet Tempus
         title: Etiam
         url: blogs/ipsum
+      
   two:
     buttonText: Get Started
     enable: yes
