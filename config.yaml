@@ -1,4 +1,4 @@
-baseURL: https://francesconicoli00.netlify.app
+baseURL: https://francesconicoli00.netlify.app/
 languageCode: en-us
 title: Personal portfolio website
 theme: forty
@@ -83,22 +83,22 @@ params:
   tiles:
     enable: yes
     showcase:
-      - image: spices.jpg
-        subtitle: Ipsum Dolor Sit Amet
-        title: Aliquam
-        url: blogs/aliquam
-      - image: pic02.jpg
-        subtitle: Feugiat Amet Tempus
-        title: Tempus
-        url: blogs/tempus
-      - image: pic03.jpg
-        subtitle: Lorem Etiam Nullam
-        title: Magna
-        url: blogs/magna
+      - image: sfgolden.jpg
+        subtitle: A brief presentation
+        title: About me
+        url: blogs/biography1
+      - image: Sailing_theme.jpg
+        subtitle: My sailing experience
+        title: Sailing
+        url: blogs/sailing_1
+      - image: piano_banner.jpg
+        subtitle: My music experience
+        title: Piano
+        url: blogs/piano_1
       - image: pic04.jpg
         subtitle: All about me
-        title: My Biography
-        url: blogs/biography
+        title: Aliquam
+        url: blogs/aliquam
       - image: pic05.jpg
         subtitle: Risk Returm
         title: Analysis

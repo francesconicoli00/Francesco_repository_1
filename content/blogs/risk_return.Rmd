@@ -11,9 +11,6 @@ keywords: ""
 slug: risk_return # slug is the shorthand URL address... no spaces plz
 title: Risk-Return of DJIA stocks
 ---
-  
-
-
 
 ```{r, setup, echo=FALSE}
 knitr::opts_chunk$set(
@@ -25,8 +22,8 @@ options(digits = 3)
 
 # default figure size
 knitr::opts_chunk$set(
-  fig.width=6.75, 
-  fig.height=6.75,
+  fig.width=5.00, 
+  fig.height=5.00,
   fig.align = "center"
 )
 ```

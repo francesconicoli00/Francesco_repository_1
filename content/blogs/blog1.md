@@ -7,8 +7,7 @@ description: ""
 draft: false
 image: pic10.jpg
 keywords: ""
-slug: biography
-title: Ipsum
+slug: aliquam
+title: Aliquam
 ---
 
-My name is Francesco.

@@ -1,0 +1,42 @@
+---
+categories:  
+- ""    #the front matter should be like the one found in, e.g., blog2.md. It cannot be like the normal Rmd we used
+- ""
+date: "2022-09-18"
+description: About me # the title that will show up once someone gets to this page
+draft: false
+image: "" 
+keywords: ""
+slug: biography1 # slug is the shorthand URL address... no spaces plz
+title: About me
+---
+
+```{r, add_self_img, out.width="60%", fig.align='center', echo=FALSE}
+knitr::include_graphics("/img/desertSunset.jpg",error=FALSE)
+```
+
+Hello everyone! I am Francesco Nicolì. I am *22* years old. I was born in *Lequile*, a tiny village next to *Lecce*, a beautiful city in one of the most wonderful regions of Italy: **Puglia**.
+
+```{r, add_PC_img, fig.align='center', echo=FALSE}
+knitr::include_graphics("/img/PC_pic.jpg",error=FALSE)
+```
+
+I attended elementary school in *Copertino*, middle school in *Lequile* and high school in *Lecce*. At the age of **19**, I moved to *Milan* to study for my Bachelor’s in Economics and Management. I lived in Milan for three years, until the age of **22**.
+
+```{r, add_milan_img, out.width="70%", fig.align='center', echo=FALSE}
+knitr::include_graphics("/img/milan_pic.jpg",error=FALSE)
+```
+
+I also had the chance to take part in the Exchange program held by my home university, spending a whole semester in **San Diego**. I just moved to **London** to pursue my Master’s in Analytics and Management at *London Business School*.
+
+```{r, add_LBS_img, out.width="70%", fig.align='center', echo=FALSE}
+knitr::include_graphics("/img/LBS_pic.jpg",error=FALSE)
+```
+
+I have many *passions* and *hobbies* - such as *sailing* and playing the *piano* - and you can find more about them in the other sections of this website. In addition, I am a **data analytics** and **entrepreneurship** enthusiast - as you can notice by the Master I am currently pursuing - and, in the future, I hope to give vent to my *creative* penchant and start a business in this filed. I consider myself as an *open-minded* person, always open to step out of the comfort zone and try new experiences, environments, people and so on.
+
+I leave you with this pic from San Diego and invite you to explore the other sections of this website if you want to discover more about other interesting aspects of my life!
+
+```{r, add_SD_img, out.width="50%", fig.align='center', echo=FALSE}
+knitr::include_graphics("/img/SD_pic.jpg",error=FALSE)
+```
