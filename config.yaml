@@ -99,14 +99,14 @@ params:
         subtitle: Explore my curriculum
         title: Business experience
         url: blogs/business_experience
-      - image: pic05.jpg
-        subtitle: Risk Returm
-        title: Analysis
-        url: blogs/risk_return
-      - image: pic06.jpg
-        subtitle: Feugiat Amet Tempus
-        title: Etiam
-        url: blogs/ipsum
+      - image: thesis_banner.png
+        subtitle: Explore my undergrad thesis
+        title: My final thesis
+        url: blogs/thesis_project
+      - image: brexit_banner.png
+        subtitle: Explore my analytics project
+        title: Brexit vote analysis
+        url: blogs/brexit_project
       
   two:
     buttonText: Get Started

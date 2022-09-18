@@ -1,0 +1,33 @@
+---
+categories:  
+- ""    #the front matter should be like the one found in, e.g., blog2.md. It cannot be like the normal Rmd we used
+- ""
+date: "2022-09-18"
+description: Explore the content of my undergrad thesis # the title that will show up once someone gets to this page
+draft: false
+# image:
+
+keywords: ""
+slug: thesis_project # slug is the shorthand URL address... no spaces plz
+title: My final thesis
+---
+```{r, uploading_database, message=FALSE, warning=FALSE, echo=FALSE}
+
+library(readxl)
+library(here)
+sata_database <- read_excel(here("data","sata_database.xlsx"))
+
+```
+
+- Introduction
+  - Why I show you the content of my thesis
+  - what this is about
+  - what questions I try to answer
+  - methodology implemented
+
+- Data manipulation
+  - Exploring data (distribution, glimpse ecc.)
+  - Selecting data for the analysis and start testing
+  - Testing with qq-plot
+
+- Conclusions & model setup

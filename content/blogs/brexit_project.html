@@ -1,0 +1,78 @@
+---
+categories:  
+- ""    #the front matter should be like the one found in, e.g., blog2.md. It cannot be like the normal Rmd we used
+- ""
+date: "2022-09-18"
+description: Explore my analytics project # the title that will show up once someone gets to this page
+draft: false
+# image:
+
+keywords: ""
+slug: brexit_project # slug is the shorthand URL address... no spaces plz
+title: Brexit vote analysis
+---
+
+
+
+<p>We will have a look at the results of the <strong>2016 Brexit</strong> vote in the <strong>UK</strong>.</p>
+<pre class="r"><code>library(readr)
+library(here)
+library(dplyr)
+library(ggplot2)
+
+brexit_results &lt;- read_csv(here(&quot;data&quot;,&quot;brexit_results.csv&quot;))
+
+glimpse(brexit_results)</code></pre>
+<pre><code>## Rows: 632
+## Columns: 11
+## $ Seat        &lt;chr&gt; &quot;Aldershot&quot;, &quot;Aldridge-Brownhills&quot;, &quot;Altrincham and Sale W…
+## $ con_2015    &lt;dbl&gt; 50.592, 52.050, 52.994, 43.979, 60.788, 22.418, 52.454, 22…
+## $ lab_2015    &lt;dbl&gt; 18.333, 22.369, 26.686, 34.781, 11.197, 41.022, 18.441, 49…
+## $ ld_2015     &lt;dbl&gt; 8.824, 3.367, 8.383, 2.975, 7.192, 14.828, 5.984, 2.423, 1…
+## $ ukip_2015   &lt;dbl&gt; 17.867, 19.624, 8.011, 15.887, 14.438, 21.409, 18.821, 21.…
+## $ leave_share &lt;dbl&gt; 57.89777, 67.79635, 38.58780, 65.29912, 49.70111, 70.47289…
+## $ born_in_uk  &lt;dbl&gt; 83.10464, 96.12207, 90.48566, 97.30437, 93.33793, 96.96214…
+## $ male        &lt;dbl&gt; 49.89896, 48.92951, 48.90621, 49.21657, 48.00189, 49.17185…
+## $ unemployed  &lt;dbl&gt; 3.637000, 4.553607, 3.039963, 4.261173, 2.468100, 4.742731…
+## $ degree      &lt;dbl&gt; 13.870661, 9.974114, 28.600135, 9.336294, 18.775591, 6.085…
+## $ age_18to24  &lt;dbl&gt; 9.406093, 7.325850, 6.437453, 7.747801, 5.734730, 8.209863…</code></pre>
+<p>To get a <em>sense</em> of the spread, or <strong>distribution</strong>, of the data, we can plot a <strong>histogram</strong>, a <strong>density plot</strong>, and the <strong>empirical cumulative distribution</strong> function of the <em>leave share</em> in all <em>constituencies</em>.</p>
+<pre class="r"><code># histogram
+ggplot(brexit_results, aes(x = leave_share)) +
+  geom_histogram(binwidth = 2.5) + labs(title=&quot;Histogram representing Leave share distribution&quot;,x=&quot;Leave share&quot;,y=&quot;Frequency&quot;)</code></pre>
+<p><img src="/blogs/brexit_project_files/figure-html/brexit_histogram-1.png" width="672" /></p>
+<pre class="r"><code># density plot-- think smoothed histogram
+ggplot(brexit_results, aes(x = leave_share)) +
+  geom_density() + labs(title=&quot;Leave share continuous distribution&quot;,x=&quot;Leave share&quot;,y=&quot;Density&quot;)</code></pre>
+<p><img src="/blogs/brexit_project_files/figure-html/brexit_histogram-2.png" width="672" /></p>
+<pre class="r"><code># The empirical cumulative distribution function (ECDF) 
+ggplot(brexit_results, aes(x = leave_share)) +
+  stat_ecdf(geom = &quot;step&quot;, pad = FALSE) +
+  scale_y_continuous(labels = scales::percent) + labs(title=&quot;Leave share cumulative distribution&quot;,x=&quot;Leave share&quot;,y=&quot;Cumulative density&quot;)</code></pre>
+<p><img src="/blogs/brexit_project_files/figure-html/brexit_histogram-3.png" width="672" /></p>
+<p>Since one common explanation for the Brexit outcome was <strong>fear of immigration</strong> and <strong>opposition</strong> to the EU’s more open border policy, we might wanna check the <strong>relationship</strong> (or correlation) between the proportion of native born residents (<code>born_in_uk</code>) in a constituency and its <code>leave_share</code>.</p>
+<pre class="r"><code>brexit_results %&gt;% 
+  select(leave_share, born_in_uk) %&gt;% 
+  cor()</code></pre>
+<pre><code>##             leave_share born_in_uk
+## leave_share   1.0000000  0.4934295
+## born_in_uk    0.4934295  1.0000000</code></pre>
+<p>As we can see, the coefficient is almost <strong>0.5</strong>, meaning that the two variables are <strong>positively correlated</strong>. Another way we can prove the positive correlation is by building a <em>scatter plot</em> between these two variables.</p>
+<pre class="r"><code>ggplot(brexit_results, aes(x = born_in_uk, y = leave_share)) +
+  geom_point(alpha=0.3) +
+  
+  # add a smoothing line, and use method=&quot;lm&quot; to get the best straight-line
+  geom_smooth(method = &quot;lm&quot;) +
+  
+  # use a white background and frame the plot with a black box
+  theme_bw() +
+  labs(title=&quot;Leave-share trend based on UK-native-share&quot;,x=&quot;Percentage of people born in the UK&quot;,y=&quot;Leave share&quot;) +
+  NULL</code></pre>
+<pre><code>## `geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
+<p><img src="/blogs/brexit_project_files/figure-html/brexit_immigration_plot-1.png" width="672" /></p>
+<blockquote>
+<p>As it stands on the distribution graphs, we can see how the leave share is <em>normally distributed</em> with a skeweness to the <em>left</em>. This tells us that the most common leave shares were between <strong>52% and 60%</strong> and that the rest of the shares were evenly distributed on both sides, meaning the country was definitely in favor of <strong>leaving</strong> the European Union.</p>
+</blockquote>
+<blockquote>
+<p>Analysing the correlation between the percentage of UK natives and the leave share in each seat, we noticed how the correlation between the two variables is actually <strong>positive</strong> (even if not that strong). This because the presence of UK natives in the electoral body significantly influences the decision, since those individuals are those who are most likely to be <em>contrary</em> to a more open border policy. This pattern can be seen even more clearly with high percentages of UK natives (from <strong>80%</strong> on), proving that the presence of a <em>massive</em> UK-native-electoral-body might have influenced the decision of many other voters.</p>
+</blockquote>
