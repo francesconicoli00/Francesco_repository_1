@@ -95,10 +95,10 @@ params:
         subtitle: My music experience
         title: Piano
         url: blogs/piano_1
-      - image: pic04.jpg
-        subtitle: All about me
-        title: Aliquam
-        url: blogs/aliquam
+      - image: linkedin_profile_photo.jpg
+        subtitle: Explore my curriculum
+        title: Business experience
+        url: blogs/business_experience
       - image: pic05.jpg
         subtitle: Risk Returm
         title: Analysis

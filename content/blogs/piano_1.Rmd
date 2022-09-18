@@ -26,3 +26,15 @@ I maintained this attitude throughout the whole experience with the instrument, 
 ```{r, adding_academy_pic, out.width="50%", fig.align='center', echo=FALSE}
 knitr::include_graphics("/img/piano_academy.jpg",error=FALSE)
 ```
+
+## The academic experience
+
+Even though the music school I went to was a proper **academy** - meaning I had to follow study schedules and dedicate a fixed amount of time to **practicing** every day - I didn't feel the weight of this. In that period, I had to manage a *busy* schedule: studying for school, studying for the music academy and training for sailing races. Nevertheless, I really perceived the moments dedicated to playing the piano as a chance to take a break and truly taste the pleasure of "producing music".
+
+In addition, the school has always given me the chance to express my creativity and "draw outside the margins". In fact, when it came the moment of the **final exhibition** - which was the most important event of the academic year - I was free to present tracks I composed myself and, at the same time, play the musical classics. This is a pic of me playing my first composition at the final exhibition.
+
+```{r, adding_exhibition_pic, out.width="50%", fig.align='center', echo=FALSE}
+knitr::include_graphics("/img/piano_exhibition.jpg",error=FALSE)
+```
+
+I am really glad of the *environment* and the people thanks to whom I had the chance to grow and give direction to this talent. I still make some time to sit down and improvise or *rehearse* the tracks I composed in the past or the musical classics I studied.
