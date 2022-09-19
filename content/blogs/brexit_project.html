@@ -50,6 +50,9 @@ ggplot(brexit_results, aes(x = leave_share)) +
   stat_ecdf(geom = &quot;step&quot;, pad = FALSE) +
   scale_y_continuous(labels = scales::percent) + labs(title=&quot;Leave share cumulative distribution&quot;,x=&quot;Leave share&quot;,y=&quot;Cumulative density&quot;)</code></pre>
 <p><img src="/blogs/brexit_project_files/figure-html/brexit_histogram-3.png" width="672" /></p>
+<blockquote>
+<p>As it stands on the distribution graphs, we can see how the leave share is <em>normally distributed</em> with a skeweness to the <em>left</em>. This tells us that the most common leave shares were between <strong>52% and 60%</strong> and that the rest of the shares were evenly distributed on both sides, meaning the country was definitely in favor of <strong>leaving</strong> the European Union.</p>
+</blockquote>
 <p>Since one common explanation for the Brexit outcome was <strong>fear of immigration</strong> and <strong>opposition</strong> to the EU’s more open border policy, we might wanna check the <strong>relationship</strong> (or correlation) between the proportion of native born residents (<code>born_in_uk</code>) in a constituency and its <code>leave_share</code>.</p>
 <pre class="r"><code>brexit_results %&gt;% 
   select(leave_share, born_in_uk) %&gt;% 
@@ -70,9 +73,6 @@ ggplot(brexit_results, aes(x = leave_share)) +
   NULL</code></pre>
 <pre><code>## `geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
 <p><img src="/blogs/brexit_project_files/figure-html/brexit_immigration_plot-1.png" width="672" /></p>
-<blockquote>
-<p>As it stands on the distribution graphs, we can see how the leave share is <em>normally distributed</em> with a skeweness to the <em>left</em>. This tells us that the most common leave shares were between <strong>52% and 60%</strong> and that the rest of the shares were evenly distributed on both sides, meaning the country was definitely in favor of <strong>leaving</strong> the European Union.</p>
-</blockquote>
 <blockquote>
 <p>Analysing the correlation between the percentage of UK natives and the leave share in each seat, we noticed how the correlation between the two variables is actually <strong>positive</strong> (even if not that strong). This because the presence of UK natives in the electoral body significantly influences the decision, since those individuals are those who are most likely to be <em>contrary</em> to a more open border policy. This pattern can be seen even more clearly with high percentages of UK natives (from <strong>80%</strong> on), proving that the presence of a <em>massive</em> UK-native-electoral-body might have influenced the decision of many other voters.</p>
 </blockquote>

@@ -41,6 +41,8 @@ ggplot(brexit_results, aes(x = leave_share)) +
   scale_y_continuous(labels = scales::percent) + labs(title="Leave share cumulative distribution",x="Leave share",y="Cumulative density")
 ```
 
+> As it stands on the distribution graphs, we can see how the leave share is *normally distributed* with a skeweness to the *left*. This tells us that the most common leave shares were between **52% and 60%** and that the rest of the shares were evenly distributed on both sides, meaning the country was definitely in favor of **leaving** the European Union.
+
 Since one common explanation for the Brexit outcome was **fear of immigration** and **opposition** to the EU's more open border policy, we might wanna check the **relationship** (or correlation) between the proportion of native born residents (`born_in_uk`) in a constituency and its `leave_share`.
 
 ```{r, brexit_immigration_correlation}
@@ -63,7 +65,5 @@ ggplot(brexit_results, aes(x = born_in_uk, y = leave_share)) +
   labs(title="Leave-share trend based on UK-native-share",x="Percentage of people born in the UK",y="Leave share") +
   NULL
 ```
-
-> As it stands on the distribution graphs, we can see how the leave share is *normally distributed* with a skeweness to the *left*. This tells us that the most common leave shares were between **52% and 60%** and that the rest of the shares were evenly distributed on both sides, meaning the country was definitely in favor of **leaving** the European Union.
 
 >Analysing the correlation between the percentage of UK natives and the leave share in each seat, we noticed how the correlation between the two variables is actually **positive** (even if not that strong). This because the presence of UK natives in the electoral body significantly influences the decision, since those individuals are those who are most likely to be *contrary* to a more open border policy. This pattern can be seen even more clearly with high percentages of UK natives (from **80%** on), proving that the presence of a *massive* UK-native-electoral-body might have influenced the decision of many other voters.
