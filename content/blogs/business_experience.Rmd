@@ -5,12 +5,27 @@ categories:
 date: "2022-09-18"
 description: Explore my curriculum # the title that will show up once someone gets to this page
 draft: false
- # image: # save picture in \static\img\blogs. Acceptable formats= jpg, jpeg, or png . Your iPhone pics wont work
+image: linkedin_profile_photo.jpg 
 
 keywords: ""
 slug: business_experience # slug is the shorthand URL address... no spaces plz
 title: Business experience
 ---
+
+```{r, setup, echo=FALSE}
+knitr::opts_chunk$set(
+  message = FALSE, 
+  warning = FALSE, 
+  tidy=FALSE,     # display code as typed
+  size="small")   # slightly smaller font for code
+options(digits = 3)
+# default figure size
+knitr::opts_chunk$set(
+  fig.width=6.75, 
+  fig.height=6.75,
+  fig.align = "center"
+)
+```
 
 As you know by the initial presentation, I have two huge **interests** with regards to the professional scope: entrepreneurship and data analytics. Thanks to my undergraduate journey at *Bocconi* university, I had the chance to explore both these interests more in depth and discover those are actually **passions** of mine. I am genuinely fascinated by the science of translating the language of numbers and by the dream of creating something innovative in this field.
 

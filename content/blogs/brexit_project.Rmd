@@ -5,12 +5,27 @@ categories:
 date: "2022-09-18"
 description: Explore my analytics project # the title that will show up once someone gets to this page
 draft: false
-# image:
+image: brexit_presentation.jpg
 
 keywords: ""
 slug: brexit_project # slug is the shorthand URL address... no spaces plz
 title: Brexit vote analysis
 ---
+
+```{r, setup, echo=FALSE}
+knitr::opts_chunk$set(
+  message = FALSE, 
+  warning = FALSE, 
+  tidy=FALSE,     # display code as typed
+  size="small")   # slightly smaller font for code
+options(digits = 3)
+# default figure size
+knitr::opts_chunk$set(
+  fig.width=6.75, 
+  fig.height=6.75,
+  fig.align = "center"
+)
+```
 
 We will have a look at the results of the **2016 Brexit** vote in the **UK**.
 

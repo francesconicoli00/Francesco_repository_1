@@ -5,14 +5,24 @@ categories:
 date: "2022-09-18"
 description: My sailing experience # the title that will show up once someone gets to this page
 draft: false
-image: ""
+image: sailing_intro.jpg
 keywords: ""
 slug: sailing_1 # slug is the shorthand URL address... no spaces plz
 title: Sailing
 ---
-
-```{r, adding_intro_pic, out.width="70%", fig.align='center', echo=FALSE}
-knitr::include_graphics("/img/sailing_intro.jpg",error=FALSE)
+```{r, setup, echo=FALSE}
+knitr::opts_chunk$set(
+  message = FALSE, 
+  warning = FALSE, 
+  tidy=FALSE,     # display code as typed
+  size="small")   # slightly smaller font for code
+options(digits = 3)
+# default figure size
+knitr::opts_chunk$set(
+  fig.width=6.75, 
+  fig.height=6.75,
+  fig.align = "center"
+)
 ```
 
 **Sailing** has been one of the most valuable experiences of my life. Thanks to this experience, I had the chance to *travel the world* and *grow* as an individual. My mindset and attitude have both benefited so much from all the adventures I lived in this field.

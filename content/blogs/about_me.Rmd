@@ -5,14 +5,25 @@ categories:
 date: "2022-09-18"
 description: About me # the title that will show up once someone gets to this page
 draft: false
-image: "" 
+image: desertSunset.jpg
 keywords: ""
 slug: biography1 # slug is the shorthand URL address... no spaces plz
 title: About me
 ---
 
-```{r, add_self_img, out.width="60%", fig.align='center', echo=FALSE}
-knitr::include_graphics("/img/desertSunset.jpg",error=FALSE)
+```{r, setup, echo=FALSE}
+knitr::opts_chunk$set(
+  message = FALSE, 
+  warning = FALSE, 
+  tidy=FALSE,     # display code as typed
+  size="small")   # slightly smaller font for code
+options(digits = 3)
+# default figure size
+knitr::opts_chunk$set(
+  fig.width=6.75, 
+  fig.height=6.75,
+  fig.align = "center"
+)
 ```
 
 Hello everyone! I am Francesco Nicolì. I am *22* years old. I was born in *Lequile*, a tiny village next to *Lecce*, a beautiful city in one of the most wonderful regions of Italy: **Puglia**.

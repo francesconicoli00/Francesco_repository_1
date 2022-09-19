@@ -5,7 +5,7 @@ categories:
 date: "2022-09-18"
 description: Explore the content of my undergrad thesis # the title that will show up once someone gets to this page
 draft: false
-# image:
+image: thesis_banner.png
 
 keywords: ""
 slug: thesis_project # slug is the shorthand URL address... no spaces plz
@@ -28,16 +28,16 @@ title: My final thesis
 <pre><code>## Rows: 26
 ## Columns: 11
 ## $ `CE SATA - Riservato` &lt;chr&gt; &quot;Ricavi di competenza&quot;, &quot;Ricavi da consulenza&quot;, …
-## $ `2017`                &lt;dbl&gt; 4392.82258, 1916.59190, 2476.23068, 2576.94369, …
-## $ ...3                  &lt;dbl&gt; 4392.82258, 1916.59190, 2476.23068, 2660.73152, …
-## $ `2018`                &lt;dbl&gt; 5124.97170, 2362.78540, 2762.18630, 3037.98196, …
-## $ ...5                  &lt;dbl&gt; 5124.97170, 2362.78540, 2762.18630, 2998.05849, …
-## $ `2019`                &lt;dbl&gt; 5480.71938, 2715.18329, 2765.53609, 3389.47047, …
-## $ ...7                  &lt;dbl&gt; 5480.719378, 2715.183288, 2765.536090, 3213.3899…
-## $ `2020`                &lt;dbl&gt; 5732.88416, 2720.17597, 3012.70819, 3548.41133, …
-## $ ...9                  &lt;dbl&gt; 5732.88416, 2720.17597, 3012.70819, 3485.86911, …
-## $ `2021`                &lt;dbl&gt; 6848.28701, 3616.32208, 3231.96493, 4276.27420, …
-## $ ...11                 &lt;dbl&gt; 6848.28701, 3616.32208, 3231.96493, 4202.46790, …</code></pre>
+## $ `2017`                &lt;dbl&gt; 4392.82, 1916.59, 2476.23, 2576.94, 873.74, 221.…
+## $ ...3                  &lt;dbl&gt; 4392.8, 1916.6, 2476.2, 2660.7, 925.3, 296.1, 41…
+## $ `2018`                &lt;dbl&gt; 5124.97, 2362.79, 2762.19, 3037.98, 1100.12, 270…
+## $ ...5                  &lt;dbl&gt; 5125.0, 2362.8, 2762.2, 2998.1, 1078.9, 270.7, 5…
+## $ `2019`                &lt;dbl&gt; 5480.7, 2715.2, 2765.5, 3389.5, 1151.4, 377.5, 2…
+## $ ...7                  &lt;dbl&gt; 5480.72, 2715.18, 2765.54, 3213.39, 1099.88, 299…
+## $ `2020`                &lt;dbl&gt; 5732.88, 2720.18, 3012.71, 3548.41, 1072.43, 268…
+## $ ...9                  &lt;dbl&gt; 5732.9, 2720.2, 3012.7, 3485.9, 1201.4, 327.6, 2…
+## $ `2021`                &lt;dbl&gt; 6.85e+03, 3.62e+03, 3.23e+03, 4.28e+03, 1.45e+03…
+## $ ...11                 &lt;dbl&gt; 6848.3, 3616.3, 3232.0, 4202.5, 1406.6, 406.9, 2…</code></pre>
 <pre class="r"><code>skim(select(sata_database,2:11))</code></pre>
 <table>
 <caption>(#tab:glimpse_database)Data summary</caption>
@@ -79,17 +79,17 @@ title: My final thesis
 <p><strong>Variable type: numeric</strong></p>
 <table>
 <colgroup>
-<col width="14%" />
-<col width="10%" />
-<col width="14%" />
-<col width="8%" />
-<col width="8%" />
-<col width="5%" />
-<col width="7%" />
-<col width="7%" />
-<col width="8%" />
-<col width="8%" />
+<col width="17%" />
+<col width="12%" />
+<col width="17%" />
 <col width="6%" />
+<col width="6%" />
+<col width="6%" />
+<col width="7%" />
+<col width="5%" />
+<col width="6%" />
+<col width="6%" />
+<col width="7%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -111,130 +111,130 @@ title: My final thesis
 <td align="left">2017</td>
 <td align="right">0</td>
 <td align="right">1</td>
-<td align="right">769.98</td>
-<td align="right">1081.78</td>
+<td align="right">770</td>
+<td align="right">1082</td>
 <td align="right">3.28</td>
-<td align="right">73.42</td>
-<td align="right">181.56</td>
-<td align="right">1133.71</td>
-<td align="right">4392.82</td>
+<td align="right">73.4</td>
+<td align="right">182</td>
+<td align="right">1134</td>
+<td align="right">4393</td>
 <td align="left">▇▁▂▁▁</td>
 </tr>
 <tr class="even">
 <td align="left">…3</td>
 <td align="right">0</td>
 <td align="right">1</td>
-<td align="right">764.87</td>
-<td align="right">1086.88</td>
+<td align="right">765</td>
+<td align="right">1087</td>
 <td align="right">0.00</td>
-<td align="right">73.01</td>
-<td align="right">173.99</td>
-<td align="right">1157.55</td>
-<td align="right">4392.82</td>
+<td align="right">73.0</td>
+<td align="right">174</td>
+<td align="right">1158</td>
+<td align="right">4393</td>
 <td align="left">▇▂▁▁▁</td>
 </tr>
 <tr class="odd">
 <td align="left">2018</td>
 <td align="right">0</td>
 <td align="right">1</td>
-<td align="right">898.38</td>
-<td align="right">1254.88</td>
+<td align="right">898</td>
+<td align="right">1255</td>
 <td align="right">2.83</td>
-<td align="right">89.51</td>
-<td align="right">262.29</td>
-<td align="right">1279.97</td>
-<td align="right">5124.97</td>
+<td align="right">89.5</td>
+<td align="right">262</td>
+<td align="right">1280</td>
+<td align="right">5125</td>
 <td align="left">▇▁▂▁▁</td>
 </tr>
 <tr class="even">
 <td align="left">…5</td>
 <td align="right">0</td>
 <td align="right">1</td>
-<td align="right">894.85</td>
-<td align="right">1258.40</td>
+<td align="right">895</td>
+<td align="right">1258</td>
 <td align="right">2.00</td>
-<td align="right">82.42</td>
-<td align="right">229.77</td>
-<td align="right">1310.46</td>
-<td align="right">5124.97</td>
+<td align="right">82.4</td>
+<td align="right">230</td>
+<td align="right">1310</td>
+<td align="right">5125</td>
 <td align="left">▇▁▂▁▁</td>
 </tr>
 <tr class="odd">
 <td align="left">2019</td>
 <td align="right">0</td>
 <td align="right">1</td>
-<td align="right">952.08</td>
-<td align="right">1342.91</td>
+<td align="right">952</td>
+<td align="right">1343</td>
 <td align="right">0.00</td>
-<td align="right">93.04</td>
-<td align="right">253.97</td>
-<td align="right">1318.40</td>
-<td align="right">5480.72</td>
+<td align="right">93.0</td>
+<td align="right">254</td>
+<td align="right">1318</td>
+<td align="right">5481</td>
 <td align="left">▇▂▁▁▁</td>
 </tr>
 <tr class="even">
 <td align="left">…7</td>
 <td align="right">0</td>
 <td align="right">1</td>
-<td align="right">957.50</td>
-<td align="right">1341.29</td>
+<td align="right">958</td>
+<td align="right">1341</td>
 <td align="right">1.43</td>
-<td align="right">102.50</td>
-<td align="right">250.19</td>
-<td align="right">1379.97</td>
-<td align="right">5480.72</td>
+<td align="right">102.5</td>
+<td align="right">250</td>
+<td align="right">1380</td>
+<td align="right">5481</td>
 <td align="left">▇▁▂▁▁</td>
 </tr>
 <tr class="odd">
 <td align="left">2020</td>
 <td align="right">0</td>
 <td align="right">1</td>
-<td align="right">999.72</td>
-<td align="right">1423.64</td>
+<td align="right">1000</td>
+<td align="right">1424</td>
 <td align="right">1.15</td>
-<td align="right">96.27</td>
-<td align="right">268.00</td>
-<td align="right">1498.29</td>
-<td align="right">5732.88</td>
+<td align="right">96.3</td>
+<td align="right">268</td>
+<td align="right">1498</td>
+<td align="right">5733</td>
 <td align="left">▇▁▁▁▁</td>
 </tr>
 <tr class="even">
 <td align="left">…9</td>
 <td align="right">0</td>
 <td align="right">1</td>
-<td align="right">995.55</td>
-<td align="right">1408.03</td>
+<td align="right">996</td>
+<td align="right">1408</td>
 <td align="right">0.00</td>
-<td align="right">100.80</td>
-<td align="right">246.50</td>
-<td align="right">1412.43</td>
-<td align="right">5732.88</td>
+<td align="right">100.8</td>
+<td align="right">246</td>
+<td align="right">1412</td>
+<td align="right">5733</td>
 <td align="left">▇▂▁▁▁</td>
 </tr>
 <tr class="odd">
 <td align="left">2021</td>
 <td align="right">0</td>
 <td align="right">1</td>
-<td align="right">1193.18</td>
-<td align="right">1700.25</td>
+<td align="right">1193</td>
+<td align="right">1700</td>
 <td align="right">0.00</td>
-<td align="right">69.66</td>
-<td align="right">347.56</td>
-<td align="right">1850.59</td>
-<td align="right">6848.29</td>
+<td align="right">69.7</td>
+<td align="right">348</td>
+<td align="right">1851</td>
+<td align="right">6848</td>
 <td align="left">▇▂▁▁▁</td>
 </tr>
 <tr class="even">
 <td align="left">…11</td>
 <td align="right">0</td>
 <td align="right">1</td>
-<td align="right">1189.70</td>
-<td align="right">1683.27</td>
+<td align="right">1190</td>
+<td align="right">1683</td>
 <td align="right">0.00</td>
-<td align="right">107.88</td>
-<td align="right">299.82</td>
-<td align="right">1671.93</td>
-<td align="right">6848.29</td>
+<td align="right">107.9</td>
+<td align="right">300</td>
+<td align="right">1672</td>
+<td align="right">6848</td>
 <td align="left">▇▂▁▁▁</td>
 </tr>
 </tbody>
@@ -259,11 +259,11 @@ data_to_plot &lt;- data_to_use %&gt;%
   pivot_longer(2:6,names_to=&quot;Variance_year&quot;,values_to=&quot;Variance_percentage&quot;)
 
 ggplot(data_to_plot, aes(x=Variance_percentage)) + geom_density()</code></pre>
-<p><img src="/blogs/thesis_project_files/figure-html/plot_variance_distribution-1.png" width="672" /></p>
+<p><img src="/blogs/thesis_project_files/figure-html/plot_variance_distribution-1.png" width="648" style="display: block; margin: auto;" /></p>
 <p>In the graph above, we can easily notice how the distribution of the variances is approximately a <strong>normal distribution</strong>, around the value we assumed is the mean of the “process”, that is 0. In fact, a 0 corresponds to the absence of variance, namely the final voice is equal to the voice predicted in the budget.</p>
 <p>After this step, I decided to integrate the research of the distribution with another plot - the qq-plot- so that I could more strongly support my conclusion that the distribution of this variable is approximately normal, regardless of the size of the sample. This plot would give me a more precise picture of the actual differences between the distribution of the variances and a perfectly normal distribution.</p>
 <pre class="r"><code>ggplot(data_to_plot, aes(sample=Variance_percentage)) + stat_qq()</code></pre>
-<p><img src="/blogs/thesis_project_files/figure-html/qqplot-1.png" width="672" /></p>
+<p><img src="/blogs/thesis_project_files/figure-html/qqplot-1.png" width="648" style="display: block; margin: auto;" /></p>
 <p>Glancing at the qq-plot produced, it is possible to notice how the <strong>upper outliers</strong> are the only elements that prevent the distribution to be a normal distribution: the presence of those values tweaks the <strong>inclination</strong> of the trend line and makes the line appear as not on the <em>x=y</em> line, the line corresponding to a perfect normal distribution. This because one of the assumptions of the control chart is the absence of outliers.</p>
 <p>Therefore, I decided to add a <strong>tweak</strong> to the traditional process of managing data when building a control chart: it is possible for the analyst to <em>take off</em> the sample those values that can be classified as outliers if and only if the “weight” of the income statement voice is <em>negligible</em>.</p>
 </div>

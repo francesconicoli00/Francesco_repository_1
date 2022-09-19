@@ -5,17 +5,30 @@ categories:
 date: "2022-09-18"
 description: My piano experience # the title that will show up once someone gets to this page
 draft: false
-# image:
-
+image: piano_banner.jpg
 keywords: ""
 slug: piano_1 # slug is the shorthand URL address... no spaces plz
 title: Piano
 ---
-Playing an instrument is something everybody should do. Making time to build this additional *skill* is definitely worth it. In fact, recent research suggests that learning how to play a new instrument increases *IQ* by 9 points. Anyways, it's easy to understand that being able to adapt to a **new "work frame"** and being able to read and play music increases *flexibility* and creates new *neural connections*.
 
-```{r, adding_stave_pic, out.width="30%", fig.align='center', echo=FALSE}
-knitr::include_graphics("/img/piano_intro.jpg",error=FALSE)
+```{r, setup, echo=FALSE}
+knitr::opts_chunk$set(
+  message = FALSE, 
+  warning = FALSE, 
+  tidy=FALSE,     # display code as typed
+  size="small")   # slightly smaller font for code
+options(digits = 3)
+# default figure size
+knitr::opts_chunk$set(
+  fig.width=6.75, 
+  fig.height=6.75,
+  fig.align = "center"
+)
 ```
+
+## The benefits of playing an instrument
+
+Playing an instrument is something everybody should do. Making time to build this additional *skill* is definitely worth it. In fact, recent research suggests that learning how to play a new instrument increases *IQ* by 9 points. Anyways, it's easy to understand that being able to adapt to a **new "work frame"** and being able to read and play music increases *flexibility* and creates new *neural connections*.
 
 ## The first approach
 
