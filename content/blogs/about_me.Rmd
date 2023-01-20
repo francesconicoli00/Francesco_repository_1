@@ -1,14 +1,14 @@
 ---
-categories:  
-- ""    #the front matter should be like the one found in, e.g., blog2.md. It cannot be like the normal Rmd we used
-- ""
+title: "About me"
 date: "2022-09-18"
-description: About me # the title that will show up once someone gets to this page
-draft: false
+description: About me
+draft: no
 image: desertSunset.jpg
-keywords: ""
-slug: biography1 # slug is the shorthand URL address... no spaces plz
-title: About me
+keywords: ''
+slug: biography1
+categories:
+- ''
+- ''
 ---
 
 ```{r, setup, echo=FALSE}
@@ -26,28 +26,90 @@ knitr::opts_chunk$set(
 )
 ```
 
-Hello everyone! I am Francesco Nicolì. I am *22* years old. I was born in *Lequile*, a tiny village next to *Lecce*, a beautiful city in one of the most wonderful regions of Italy: **Puglia**.
+Hello everyone! I am Francesco Nicolì. I am *22* years old. I was born in *Lequile*, a tiny village next to *Lecce*, a beautiful city in one of the most beautiful regions of Italy: **Puglia**.
 
-```{r, add_PC_img, out.width="60%", fig.align='center', echo=FALSE}
-knitr::include_graphics("/img/PC_pic.jpg",error=FALSE)
-```
+I have many *passions* and *hobbies* - such as *sailing* and playing the *piano* - and you can find more about them in the next paragraphs of this section. In addition, I am a **data science** and **entrepreneurship** enthusiast and I hope to give vent to my *creative* penchant and start a business in this field in the future. I consider myself an *open-minded* person, always open to step out of the comfort zone and try new experiences, environments, people and so on.
 
-I attended elementary school in *Copertino*, middle school in *Lequile* and high school in *Lecce*. At the age of **19**, I moved to *Milan* to study for my Bachelor’s in Economics and Management. I lived in Milan for three years, until the age of **22**.
+# Academic and Work experience
 
-```{r, add_milan_img, out.width="50%", fig.align='center', echo=FALSE}
-knitr::include_graphics("/img/milan_pic.jpg",error=FALSE)
-```
+## Academic curriculum
 
-I also had the chance to take part in the Exchange program held by my home university, spending a whole semester in **San Diego**. I just moved to **London** to pursue my Master’s in Analytics and Management at *London Business School*.
+I received my Bachelor's degree in **Economics and Management** at one of the most prestigious universities internationally: **Bocconi University** in Milan. During this experience, I had the chance to explore the world of Business Management and improve my critical thinking in the business field. I also had the chance to take part in the international exchange program and spend the last semester of my Bachelor at **San Diego State University** in San Diego.
 
-```{r, add_LBS_img, out.width="50%", fig.align='center', echo=FALSE}
+Currently, I am pursuing a Masters in **Analytics and Management** at **London Business School**. I chose to take on this experience in order to both cultivate my passion for numbers and follow the path toward my dreams and my professional goals. In fact, the undergraduate experience at Bocconi allowed me to realize how fascinated I am by the way numbers communicate very confidential and precious insights. Hence, I decided to further nurture this passion and work in order to build the skills that will allow me to create something meaningful in the field of data science. Below a picture of the LBS Front Lawn.
+
+```{r, adding_lbs_front_lawn_picture, out.width="50%", fig.align='center', echo=FALSE}
 knitr::include_graphics("/img/LBS_pic.jpg",error=FALSE)
 ```
 
-I have many *passions* and *hobbies* - such as *sailing* and playing the *piano* - and you can find more about them in the other sections of this website. In addition, I am a **data analytics** and **entrepreneurship** enthusiast - as you can notice by the Master I am currently pursuing - and, in the future, I hope to give vent to my *creative* penchant and start a business in this filed. I consider myself as an *open-minded* person, always open to step out of the comfort zone and try new experiences, environments, people and so on.
+## Business Experience
 
-I leave you with this pic from San Diego and invite you to explore the other sections of this website if you want to discover more about other interesting aspects of my life!
+Given my passions and professional interests, I decided to gain experience that would allow me to further explore and grow my passion for Data. For this reason, I looked for opportunities as Data Analyst, Data Scientist or roles as close as possible to this field.
 
-```{r, add_SD_img, out.width="50%", fig.align='center', echo=FALSE}
-knitr::include_graphics("/img/SD_pic.jpg",error=FALSE)
+### First Internship: Data Analyst Intern at Valentino Caffè
+
+I had my first internship experience in *Lecce*, my hometown. The company I have been working for is **Valentino Caffè**, a coffee factory. During the three months I worked for the company, I had the chance to do exactly what I wanted to: I covered an **analyst** role and made a positive impact through the exploration and thorough examination of the company's financial statement.
+
+My core task was to deal with the *allocation of costs* to inventories in stock. I have been given a database in order to fetch the necessary elements for the valuation of the warehouse. This allowed me to put into practice my *IT skills* and figure out efficient and effective ways to get the job done in the least amount of time possible.
+
+```{r, adding_valentino_pic, out.width="50%", fig.align='center', echo=FALSE}
+knitr::include_graphics("/img/valentino_professional.jpg",error=FALSE)
 ```
+
+Eventually, besides successfully completing the task I have been assigned, I also managed to analyse some *auditing errors* and pointing them out to the CFO, the person I was supervised by. This paved the way for the assignment of a new task, which was to work on the **betterment of the database**. In order to get this further task completed, I decided to start by revising all the formulas and the structure of the database in order to have a clear idea of how the data manipulation worked.
+
+After completing this first step, I realized there were some shortcomings, especially in the **formulas** for the allocation of costs and in the way data were **displayed**. Therefore, I modified some *Excel* formulas to make it more efficient and to reduce the chances of error. Finally, I changed the **structure** of some specific tables for the database to look more intuitive and easy to manipulate.
+
+### Second Internship: Data Analyst Intern at Gabesco Srl
+
+In order to gain additional work experience as a data analyst and be faced with more diverse and challenging tasks, I started an internship in a company in Milan: **Gabesco Srl**, a firm in the field of trading and commercialization of consumer goods. Here, my core task was to assist the controller of the company in the process of migrating all the *customer relationship data* to a new platform provided by SAP. The whole task required different sub tasks and skills. First of all, I had to get acquainted with the **SAP platform** and understand the mechanism behind it. In addition, I had to get familiar with making the excel database and the SAP platform communicate with each other and make sure that the *data transfer* was smooth and error-free.
+
+Besides this first task, my supervisor (the controller) also asked me to solve a problem related to the **manipulation** of the database: the goal was to make Excel return specific columns and sections of the database depending on the user who was using it. I spent the last couple weeks of my internships to find the solution to the problem and I realized I had to use *VBA* to leverage the proper automation tools in order to work this out.
+
+Hence, given that my knowledge of VBA was very basic, I started looking for the *commands* I needed to solve the problem and, eventually, I managed to almost fully achieve the goal, meaning that it was possible to modify the database based on the user but some *double-check* practices were still needed in order to make sure everything worked smoothly and no data were lost.
+
+### Coding experience
+
+It's not possible to conclude the overview of my professional skills and experiences without mentioning my **coding experience**. During my undergrad, I had the chance to take a course in computer science basics - which included an overview of the most relevant Excel formulas and a Python foundations course - and a course on R and Radiant. Thanks to this experience, I realized I was really keen on coding and I started taking lessons and coding courses by myself. I tried to **diversify** my coding skills as much as possible. In fact I took an intermediate course of *Java*, one of the most powerful and complete programming languages.
+
+```{r, adding_java_pic, out.width="50%", fig.align='center', echo=FALSE}
+knitr::include_graphics("/img/professional_coding.jpg",error=FALSE)
+```
+
+In addition, I decided to study programming languages closer to my *inclination and professional direction*: SQL and VBA. Hence, I purchased the courses and started coding by myself, always trying to deepen my understanding of the coding logic. The eagerness to gain an always deeper knowledge and understanding of the programming tools is probably one of the reasons why I ended up pursuing a *Masters in Analytics and Management*.
+
+# What I love
+
+## Piano Experience
+
+Playing an instrument is something everybody should do. Making time to build this additional *skill* is definitely worth it. In fact, recent research suggests that learning how to play a new instrument increases *IQ* by 9 points. Anyways, it's easy to understand that being able to adapt to a **new "work frame"** and being able to read and play music increases *flexibility* and creates new *neural connections*.
+
+My experience with music has been one of a kind. I started playing the piano when I was **13** years old. Although, this was not the moment when I first approached a piano, because I started strumming on the piano when I was 8 years old, trying to reproduce the songs I heard around.
+
+I maintained this attitude throughout the whole experience with the instrument, since I always tried to leave my trace by improvising and composing piano tracks from scratch. Nevertheless, talent is nothing without hard work and practice. Therefore, I decided to start studying at **Yamaha music school** in Lecce to indulge this inclination and to finally give vent to my creativity.
+
+Even though the music school I went to was a proper **academy** - meaning I had to follow study schedules and dedicate a fixed amount of time to **practicing** every day - I didn't feel the weight of this. In that period, I had to manage a *busy* schedule: studying for school, studying for the music academy and training for sailing races. Nevertheless, I really perceived the moments dedicated to playing the piano as a chance to take a break and truly taste the pleasure of "producing music".
+
+In addition, the school has always given me the chance to express my creativity and "draw outside the margins". In fact, when it came the moment of the **final exhibition** - which was the most important event of the academic year - I was free to present tracks I composed myself and, at the same time, play the music classics. This is a pic of me playing my first composition at the final exhibition.
+
+```{r, adding_exhibition_pic, out.width="50%", fig.align='center', echo=FALSE}
+knitr::include_graphics("/img/piano_exhibition.jpg",error=FALSE)
+```
+
+I am really glad for the environment and the people I had the chance to live this experience with. I still make some time to sit down and improvise or *rehearse* the tracks I composed in the past or the musical classics I studied.
+
+## Sailing experience
+
+**Sailing** has been one of the most valuable experiences of my life. Thanks to this experience, I had the chance to *travel the world* and *grow* as an individual. My mindset and attitude have both benefited so much from all the adventures I lived in this field.
+
+I started sailing on the **Optimist** (the boat for beginners) when I was 8 years old. I have to admit I was terrified to step onto a boat and navigate offshore. Fortunately, thanks to my father's drive and my grit to compete against my peers, I started enjoying it and, eventually, I fell in love with this sport.
+
+After gaining confidence and getting more and more skilled, I stepped on the **Laser**, a boat for more advanced sailors. On this boat, I managed to obtain the first ambitious results. The first good results came from *regional* races, in fact I managed to win one *gold* and two *silver* medals in the regional championship.
+
+```{r, adding_laser_pic, out.width="50%", fig.align='center', echo=FALSE}
+knitr::include_graphics("/img/sailing_intro.jpg",error=FALSE)
+```
+
+Over time, nationwide results started coming too. In 2017 and 2018 I reached the long-awaited target of the **Top 10** in the Italian ranking. In fact, in both 2017 and 2018 I managed to qualify for both the world and the European championship. In **2017**, I took part in the worlds held in *Medemblik*, Netherlands and the Europeans held in *Gdynia*, Poland, whereas in **2018** the worlds were held in *Kiel*, Germany and the Europeans on the *Lake Balaton*, Hungary.
+
+Nowadays, I still try to find the time to have a sailing session and enjoy the *nature*, tasting the magic flavor of this **passion**.

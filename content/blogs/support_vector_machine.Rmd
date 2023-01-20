@@ -1,0 +1,420 @@
+---
+categories:  
+- ""    #the front matter should be like the one found in, e.g., blog2.md. It cannot be like the normal Rmd we used
+- ""
+date: "2023-01-19"
+description: Support Vector Machine in Python # the title that will show up once someone gets to this page
+draft: false
+image: s&p500.jpg
+
+keywords: ""
+slug: support_vector_machine # slug is the shorthand URL address... no spaces plz
+title: Using SVM to forecast S&P500 index
+---
+
+```{r, setup, echo=FALSE}
+knitr::opts_chunk$set(
+  message = FALSE, 
+  warning = FALSE, 
+  tidy=FALSE,     # display code as typed
+  size="small")   # slightly smaller font for code
+options(digits = 3)
+# default figure size
+knitr::opts_chunk$set(
+  fig.width=6.75, 
+  fig.height=6.75,
+  fig.align = "center"
+)
+```
+
+```python
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import statsmodels.api as sm
+import csv
+
+from sklearn.model_selection import train_test_split
+from sklearn import preprocessing
+from sklearn.svm import SVC
+```
+
+
+```python
+# Opening dataset and assigning it to object "f"
+f = open("SPXVIX.csv")
+
+# Reading dataset and dropping rows with missing data
+read = csv.reader(f)
+next(read)
+date = []
+spx = []
+vix = []
+
+for i in read:
+    if '' not in i:
+        date.append(i[0])
+        spx.append(float(i[1]))
+        vix.append(float(i[2]))
+
+f.close()
+
+# Binding columns in a dataframe
+data_dict = {'SPX': spx, 'VIX': vix}
+
+df = pd.DataFrame(data_dict, index=date, columns=['SPX', 'VIX'])
+
+# First five resulting rows of the dataframe
+df.iloc[0:5, :]
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>SPX</th>
+      <th>VIX</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2010-01-04</th>
+      <td>1132.99</td>
+      <td>20.04</td>
+    </tr>
+    <tr>
+      <th>2010-01-05</th>
+      <td>1136.52</td>
+      <td>19.35</td>
+    </tr>
+    <tr>
+      <th>2010-01-06</th>
+      <td>1137.14</td>
+      <td>19.16</td>
+    </tr>
+    <tr>
+      <th>2010-01-07</th>
+      <td>1141.69</td>
+      <td>19.06</td>
+    </tr>
+    <tr>
+      <th>2010-01-08</th>
+      <td>1144.98</td>
+      <td>18.13</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+```python
+# Reading data into a pandas dataframe
+df = pd.read_csv("SPXVIX.csv",   index_col=0, parse_dates=True)
+
+print(df.iloc[0:8, :])
+
+# Remove NaNs efficiently & provide top 5 resulting rows
+df.dropna(inplace=True)
+
+print(df.iloc[0:5, :])
+```
+
+                    SPX    VIX
+    Date                      
+    2010-01-01      NaN    NaN
+    2010-01-04  1132.99  20.04
+    2010-01-05  1136.52  19.35
+    2010-01-06  1137.14  19.16
+    2010-01-07  1141.69  19.06
+    2010-01-08  1144.98  18.13
+    2010-01-11  1146.98  17.55
+    2010-01-12  1136.22  18.25
+                    SPX    VIX
+    Date                      
+    2010-01-04  1132.99  20.04
+    2010-01-05  1136.52  19.35
+    2010-01-06  1137.14  19.16
+    2010-01-07  1141.69  19.06
+    2010-01-08  1144.98  18.13
+    
+
+
+```python
+# Displaying row and column index labels
+print(df.index)
+
+print(df.columns)
+
+# Plotting S&P500 vs VIX
+df.loc['2017-05-03':'2018-06-29', :].plot(secondary_y='VIX')
+```
+
+    DatetimeIndex(['2010-01-04', '2010-01-05', '2010-01-06', '2010-01-07',
+                   '2010-01-08', '2010-01-11', '2010-01-12', '2010-01-13',
+                   '2010-01-14', '2010-01-15',
+                   ...
+                   '2018-06-18', '2018-06-19', '2018-06-20', '2018-06-21',
+                   '2018-06-22', '2018-06-25', '2018-06-26', '2018-06-27',
+                   '2018-06-28', '2018-06-29'],
+                  dtype='datetime64[ns]', name='Date', length=2138, freq=None)
+    Index(['SPX', 'VIX'], dtype='object')
+    
+
+
+
+
+    <AxesSubplot:xlabel='Date'>
+
+
+
+
+```{r, first_output_plot, out.width="60%", fig.align='center',message=FALSE, warning=FALSE}
+knitr::include_graphics("/img/output_3_2.png",error=FALSE)
+```
+
+    
+
+
+As it stands by the chart, the VIX and SPX seem to follow opposite trends:
+when the SPX tends to increase, the VIX tends to stay low, but when the SPX
+starts decreasing (after having reached a peak), the VIX usually spikes. In fact,
+when the SPX reaches very high prices, the fear and stress of investors tends
+to increase and the volatility increases accordingly. The opposite trend can be
+observed when the SPX is in the early stages of an upward trend: in this case,
+the VIX tends to decrease.
+
+
+```python
+# Adding simple return columns to the dataframe
+df["retSPX"] = df["SPX"].pct_change()
+
+df["retVIX"] = df["VIX"].pct_change()
+
+'''
+NaN stands for "Not a Number" and it is returned when the output of a function
+or method is undefined. In this case, the first elements of both columns
+retSPX and retVIX are NaN since, for those specific cells, the pct_change()
+method does not find a value in the "previous row" (given that there are no
+rows before the first row of the dataframe) and cannot perform the calculation.
+'''
+
+# Remove rows with missing values
+df.dropna(inplace=True)
+
+# Number of observations and variables & computing up_days_prop
+rr, cc = df.shape
+
+up_days_prop = len(df[df.retSPX > 0])/rr
+
+print('{:.1%}'.format(up_days_prop))
+```
+
+    54.7%
+    
+
+
+```python
+# Plotting scatter_matrix
+ret_matrix = pd.plotting.scatter_matrix(df.loc[:, 'retSPX':'retVIX'])
+ret_matrix[0, 0].set_yticklabels(['-0.06', '-0.04', '-0.02', '0.0', '0.02','0.04'], fontsize=9)
+plt.show()
+```
+
+
+    
+```{r, second_output_plot, out.width="60%", fig.align='center',message=FALSE, warning=FALSE}
+knitr::include_graphics("/img/output_6_0.png",error=FALSE)
+```
+    
+
+
+
+```python
+# Obtaining the correlation matrix
+cor_matrix = np.corrcoef(df.retSPX, df.retVIX)
+cor_matrix
+```
+
+
+
+
+    array([[ 1.        , -0.78941278],
+           [-0.78941278,  1.        ]])
+
+
+
+As it stands by the scatter_matrix, the cor_matrix and the graph showing the
+trend of retSPX vs retVIX, the relationship between the two returns is
+definitely an inverse relationship: these two variables are negatively
+correlated. In fact, the correlation coefficient for these two variables
+is -0.78941278 and the scatter_matrix clearly shows a negative correlation.
+Hence, if the S&P500 drops in price, we would expect a spike in the VIX, which
+signals an increase in the volatility of the US stock market.
+
+
+```python
+# Reading datasets in different objects
+snp = pd.read_csv("snp.csv",   index_col=0, parse_dates=True)
+crude = pd.read_csv("crude.csv", index_col=0, parse_dates=True)
+gold = pd.read_csv("gold.csv",  index_col=0, parse_dates=True)
+sse = pd.read_csv("sse.csv",   index_col=0, parse_dates=True)
+
+crude.dropna(inplace=True)
+gold.dropna(inplace=True)
+
+# merge dataframes by date
+temp = gold.merge(crude, left_index=True, right_index=True, how='inner')
+temp2 = temp.merge(sse, left_index=True, right_index=True, how='inner')
+df = temp2.merge(snp, left_index=True, right_index=True, how='inner')
+
+df.isnull().values.sum()  # 0 (no missing values)
+
+# Align SSE time with S&P (i.e. this will shift SSE up in column by 1 day)
+df['sse'] = df['sse'].shift(-1)
+df.dropna(inplace=True)
+
+print(df.columns)
+```
+
+    Index(['gold', 'gold vol', 'cl', 'cl vol', 'sse', 'sse vol', 'snp', 'snp vol'], dtype='object')
+    
+
+
+```python
+# Historical Gold traded volume
+plt.figure(figsize=(10, 8))
+plt.plot(df.iloc[:, 1], 'xg-')
+plt.show()
+```
+
+
+    
+```{r, third_output_plot, out.width="60%", fig.align='center',message=FALSE, warning=FALSE}
+knitr::include_graphics("/img/output_10_0.png",error=FALSE)
+```
+    
+
+
+
+```python
+# Covid-19 Gold traded volume spike!!!
+plt.figure(figsize=(10, 8))
+plt.plot(df.iloc[-100:-1, 1], 'xr-')
+plt.show()
+```
+
+
+    
+```{r, fourth_output_plot, out.width="60%", fig.align='center',message=FALSE, warning=FALSE}
+knitr::include_graphics("/img/output_11_0.png",error=FALSE)
+```
+    
+
+
+
+```python
+# Let's plot the price movement of S&P with Crude:
+df[['snp', 'cl']].plot(figsize=(10, 8), secondary_y='cl')
+```
+
+
+
+
+    <AxesSubplot:xlabel='Date'>
+
+
+
+
+    
+```{r, fifth_output_plot, out.width="60%", fig.align='center',message=FALSE, warning=FALSE}
+knitr::include_graphics("/img/output_12_1.png",error=FALSE)
+```
+    
+
+
+# DATA PREPROCESSING
+
+
+```python
+# Deactivating warnings
+import warnings 
+warnings.simplefilter('ignore')
+
+# Computing rGold, rCl, rSse, rSnp returns
+df['rGold'] = np.log(df.gold) - np.log(df.gold.shift(1))
+df['rCl'] = np.log(df.cl) - np.log(df.cl.shift(1))
+df['rSse'] = np.log(df.sse) - np.log(df.sse.shift(1))
+df['rSnp'] = np.log(df.snp) - np.log(df.snp.shift(1))
+
+# Dropping rows with missing values
+df.dropna(inplace=True)
+
+# Creating tLag column
+df['rSnp_lag1'] = df.rSnp.shift(1)
+
+# Creating DayAheadSnp column
+df['DayAheadSnp'] = df.rSnp.shift(-1)
+
+# Dropping rows with missing values
+df.dropna(inplace=True)
+
+# Creating label Pandas' Series
+y = pd.Series(np.where(df.DayAheadSnp > 0, 1, -1), index = df.index)
+
+# Dropping gold, cl, sse, snp, DayAheadSnp from df
+df.drop(['gold', 'cl', 'sse', 'snp', 'DayAheadSnp'], axis=1, inplace=True)
+
+# Creating df_scaled
+mms = preprocessing.MinMaxScaler(feature_range=(-1,1))
+
+df_scaled = pd.DataFrame(mms.fit_transform(df.to_numpy()),
+                         index = df.index,
+                         columns=df.columns)
+
+# Creating train and test datasets
+df_train, df_test, y_train, y_test = train_test_split(df_scaled[['rSnp',
+'rSnp_lag1', 'snp vol', 'rCl', 'rGold']], y, test_size=0.25, random_state=0)
+
+# Fitting the SVM with polynomial kernel & obtaining classification accuracies
+svc_poly = SVC(kernel='poly').fit(df_train, y_train)
+poly_train_accuracy = svc_poly.score(df_train, y_train)
+poly_test_accuracy = svc_poly.score(df_test, y_test)
+print(poly_train_accuracy, poly_test_accuracy)
+
+# Fitting the SVM with rbf kernel & obtaining classification accuracies
+svc_rbf = SVC().fit(df_train, y_train)
+rbf_train_accuracy = svc_rbf.score(df_train, y_train)
+rbf_test_accuracy = svc_rbf.score(df_test, y_test)
+print(rbf_train_accuracy, rbf_test_accuracy)
+```
+
+    0.5563866513233602 0.5672413793103448
+    0.5604142692750288 0.5620689655172414
+    
+
+# ACCURACY SCORES OF svc_rbf AND svc_poly
+
+svc_rbf training data accuracy = 0.5604142692750288\
+svc_rbf testing data accuracy = 0.5620689655172414
+
+svc_poly training data accuracy = 0.5563866513233602\
+svc_poly testing data accuracy = 0.5672413793103448

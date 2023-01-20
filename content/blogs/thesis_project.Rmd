@@ -3,13 +3,13 @@ categories:
 - ""    #the front matter should be like the one found in, e.g., blog2.md. It cannot be like the normal Rmd we used
 - ""
 date: "2022-09-18"
-description: Explore the content of my undergrad thesis # the title that will show up once someone gets to this page
+description: Explore the content of my undergraduate thesis # the title that will show up once someone gets to this page
 draft: false
 image: thesis_banner.png
 
 keywords: ""
 slug: thesis_project # slug is the shorthand URL address... no spaces plz
-title: My final thesis
+title: Final undergraduate thesis
 ---
 
 ```{r, setup, echo=FALSE}
@@ -40,8 +40,6 @@ library(stringr)
 sata_database <- read_excel(here("data","sata_database.xlsx"))
 
 ```
-
-My **final undergraduate thesis** is definitely one of my most significant projects. Its analytical content fits perfectly with my *goals* and *professional interests*. Also, with this project I had the chance to contribute to the research in the field of decision-making science.
 
 The goal of the thesis is to prove that it is possible to apply the **control chart**, one of the most significant statistical tools, to the **analysis of variances**, which is one of the most important steps of the broader *budget analysis*.
 
