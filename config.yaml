@@ -102,10 +102,10 @@ params:
         subtitle: Explore the content of my undergraduate thesis
         title: Final undergraduate thesis
         url: blogs/thesis_project
-      - image: brexit_banner.png
-        subtitle: Exploring the outcomes of Brexit Vote
-        title: Brexit Vote Analysis
-        url: blogs/brexit_project
+      - image: movie_banner.jpg
+        subtitle: TM Analysis & ANN Fit on Movie Data
+        title: Text Mining & Neural Net on Movie Data
+        url: blogs/ml_final_project
       
   two:
     buttonText: Get Started
