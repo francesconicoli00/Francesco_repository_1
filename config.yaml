@@ -91,7 +91,7 @@ params:
         title: NLP on Accounting Data (Python)
         url: docs/LondonLab_Final_Notebook.html
       - image: python_code.jpeg
-        title: Application of Linear Programming (Python)
+        title: Application of Linear Optimisation (Python)
         subtitle: Optimal Advertising strategy with Linear Programming
         url: blogs/linear_programming
       - image: s&p500.jpg
