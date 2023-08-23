@@ -72,7 +72,7 @@ params:
         url: '#'
       - name: Blogs
         url: blogs
-#      - name: Generic Blog
+      - name: Generic Blog
 #        url: blogs/ipsum
 #      - name: Elements
 #        url: elements.html
@@ -86,25 +86,25 @@ params:
         subtitle: A brief presentation
         title: About me
         url: blogs/biography1
-      - image: ensemble_algos.jpg
-        subtitle: Predicting London House prices
-        title: Ensemble Machine Learning with R
-        url: blogs/ensemble_algorithms
+      - image: NLP_banner.jpg
+        subtitle: Applying an NLP algo to M&A Data
+        title: NLP on Accounting Data (Python)
+        url: docs/LondonLab_Final_Notebook.html
       - image: python_code.jpeg
-        title: Linear Programming with Python
+        title: Application of Linear Programming (Python)
         subtitle: Optimal Advertising strategy with Linear Programming
         url: blogs/linear_programming
       - image: s&p500.jpg
         subtitle: Using SVM algorithm to forecast S&P500 Index 
-        title: Support Vector Machine implementation with Python
+        title: Support Vector Machine for Finance (Python)
         url: blogs/support_vector_machine
-      - image: thesis_banner.png
-        subtitle: Explore the content of my undergraduate thesis
-        title: Final undergraduate thesis
-        url: blogs/thesis_project
+      - image: ensemble_algos.jpg
+        subtitle: Predicting London House prices
+        title: Ensemble Machine Learning (R)
+        url: blogs/ensemble_algorithms
       - image: movie_banner.jpg
         subtitle: TM Analysis & ANN Fit on Movie Data
-        title: Text Mining & Neural Net on Movie Data
+        title: Text Mining & Neural Net on Movie Data (R)
         url: blogs/ml_final_project
       
   two:

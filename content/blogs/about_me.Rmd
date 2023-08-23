@@ -26,7 +26,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-Hello everyone! I am Francesco Nicolì. I am *22* years old. I was born in *Lequile*, a tiny village next to *Lecce*, a beautiful city in one of the most beautiful regions of Italy: **Puglia**.
+Hello everyone! I am Francesco Nicolì. I am *23* years old. I was born in *Lequile*, a tiny village next to *Lecce*, a beautiful city in one of the most beautiful regions of Italy: **Puglia**.
 
 I have many *passions* and *hobbies* - such as *sailing* and playing the *piano* - and you can find more about them in the next paragraphs of this section. In addition, I am a **data science** and **entrepreneurship** enthusiast and I hope to give vent to my *creative* penchant and start a business in this field in the future. I consider myself an *open-minded* person, always open to step out of the comfort zone and try new experiences, environments, people and so on.
 
@@ -36,7 +36,7 @@ I have many *passions* and *hobbies* - such as *sailing* and playing the *piano*
 
 I received my Bachelor's degree in **Economics and Management** at one of the most prestigious universities internationally: **Bocconi University** in Milan. During this experience, I had the chance to explore the world of Business Management and improve my critical thinking in the business field. I also had the chance to take part in the international exchange program and spend the last semester of my Bachelor at **San Diego State University** in San Diego.
 
-Currently, I am pursuing a Masters in **Analytics and Management** at **London Business School**. I chose to take on this experience in order to both cultivate my passion for numbers and follow the path toward my dreams and my professional goals. In fact, the undergraduate experience at Bocconi allowed me to realize how fascinated I am by the way numbers communicate very confidential and precious insights. Hence, I decided to further nurture this passion and work in order to build the skills that will allow me to create something meaningful in the field of data science. Below a picture of the LBS Front Lawn.
+In addition, I recently completed my Masters in **Analytics and Management** at **London Business School**. I chose to take on this experience in order to both cultivate my passion for numbers and follow the path toward my dreams and my professional goals. In fact, the undergraduate experience at Bocconi allowed me to realize how fascinated I am by the way numbers communicate very confidential and precious insights. Hence, I decided to further nurture this passion and work in order to build the skills that will allow me to create something meaningful in the field of data science. Below a picture of the LBS Front Lawn.
 
 ```{r, adding_lbs_front_lawn_picture, out.width="50%", fig.align='center', echo=FALSE}
 knitr::include_graphics("/img/LBS_pic.jpg",error=FALSE)
@@ -68,15 +68,29 @@ Besides this first task, my supervisor (the controller) also asked me to solve a
 
 Hence, given that my knowledge of VBA was very basic, I started looking for the *commands* I needed to solve the problem and, eventually, I managed to almost fully achieve the goal, meaning that it was possible to modify the database based on the user but some *double-check* practices were still needed in order to make sure everything worked smoothly and no data were lost.
 
-### Coding experience
+### Developing an NLP algorithm for EY
 
-It's not possible to conclude the overview of my professional skills and experiences without mentioning my **coding experience**. During my undergrad, I had the chance to take a course in computer science basics - which included an overview of the most relevant Excel formulas and a Python foundations course - and a course on R and Radiant. Thanks to this experience, I realized I was really keen on coding and I started taking lessons and coding courses by myself. I tried to **diversify** my coding skills as much as possible. In fact I took an intermediate course of *Java*, one of the most powerful and complete programming languages.
+Over the last two months of my Master, I had the invaluable opportunity to work on a Data Science project for **EY**. We were requested to develop an **NLP algorithm** that could predict the spend category of a specific cost item by predicting three labels corresponding to three different levels of categorisation, from the most granular to the most general. The model we developed uses company-specific accounting text data to predict the spend category of the item at hand. Furthermore, the model was trained on the UNSPC dataset, a dataset used to categorise products and items in a standardised way at different levels of granularity.
+
+The experience was particularly enriching for me, since I had the opportunity to not only work on the development part of it but also lead the team of people I was working with. Here a picture of the team with the client we were working for at EY's London office at London Bridge.
+
+```{r, adding_EY_pic, out.width="50%", fig.align='center', echo=FALSE}
+knitr::include_graphics("/img/EY_Project_Thrift.jpg",error=FALSE)
+```
+
+Working on such a difficult Data Science task was an opportunity to sharply enhance my technical skills and learn how to translate the client's requirements into code snippets. Furthermore, leading the team was such a great opportunity to grow professionally and personally. In fact, I learnt how to properly allocate sub-tasks to each member of the team, oversee the whole team's operations and liaise with the client on a regular basis.
+
+### Coding & technical knowledge
+
+Over the course of my undergraduate degree, I had the chance to take a course in computer science basics - which included an overview of the most relevant Excel formulas and a Python foundations course - and a course on R and Radiant. Thanks to this experience, I realized I was deeply passionate about coding and I started taking lessons and coding courses by myself. I strove to **diversify** my coding skills as much as possible. In fact I took an intermediate course of *Java*, one of the most powerful and complete programming languages.
 
 ```{r, adding_java_pic, out.width="50%", fig.align='center', echo=FALSE}
 knitr::include_graphics("/img/professional_coding.jpg",error=FALSE)
 ```
 
 In addition, I decided to study programming languages closer to my *inclination and professional direction*: SQL and VBA. Hence, I purchased the courses and started coding by myself, always trying to deepen my understanding of the coding logic. The eagerness to gain an always deeper knowledge and understanding of the programming tools is probably one of the reasons why I ended up pursuing a *Masters in Analytics and Management*.
+
+In fact, over the course of the Master, I had the opportunity to strengthen my knowledge of Python, R and SQL and apply it to real cases. In addition, the Master really gave me the chance to explore what is "under the hood" of the complex ML algorithms underlying predictive AI. This led me to further explore and discover my passion for the maths behind the ML algos I have been coding, which is why I decided to dedicate part of my time to deepen my mathematical and statistical understanding of the concepts I learned at LBS by enrolling in "Mathematics for Machine Learning Specialisation" taught by Imperial College professors.
 
 # What I love
 
