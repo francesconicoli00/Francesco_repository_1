@@ -1,6 +1,6 @@
 baseURL: https://francesconicoli00.netlify.app/
 languageCode: en-us
-title: Personal portfolio website
+title: Personal Portfolio Website
 theme: forty
 googleAnalytics: ''
 disqusShortname: ''
@@ -8,10 +8,8 @@ params:
   banner:
     buttonText: Get Started
     subtitle: |-
-      VISITING THIS WEBSITE, YOU WILL HAVE THE CHANCE TO TAKE A LOOK
-      TO THE MOST INTERESTING DATA SCIENCE PROJECTS I HAVE BEEN INVOLVED IN,
-      ALONG WITH A BRIEF PRESENTATION ABOUT MYSELF. ENJOY!
-    title: DATA SCIENCE PORTFOLIO
+      CHECK MY DATA SCIENCE PROJECTS
+    title: Welcome to my Portfolio
   blog: {}
   contact:
     address:
@@ -61,54 +59,57 @@ params:
   image: ''
   name: Francesco Nicolì
   navigation:
-    button1:
-      - name: Get Started
-        url: blogs
+    #button1:
+     # - name: Get Started
+      #  url: blogs/biography1
 #    button2:
 #      - name: Log In
 #       url: '#'
     links:
       - name: Home
         url: '#'
-      - name: Blogs
-        url: blogs
-      - name: Generic Blog
-#        url: blogs/ipsum
+      #- name: Blogs
+      #  url: '#'
+      - name: About Me
+        url: blogs/biography1
 #      - name: Elements
 #        url: elements.html
     menu: Menu
-    subtitle: Personal Portfolio
+    subtitle: Nicolì
     title: Francesco
   tiles:
     enable: yes
     showcase:
-      - image: sfgolden.jpg
-        subtitle: A brief presentation
-        title: About me
-        url: blogs/biography1
+      
       - image: NLP_banner.jpg
-        subtitle: Applying an NLP algo to M&A Data
-        title: NLP on Accounting Data (Python)
+        subtitle: NLP application on accounting data
+        title: NLP-based cost synergy analysis (PY)
         url: docs/LondonLab_Final_Notebook.html
-      - image: python_code.jpeg
-        title: Application of Linear Optimisation (Python)
-        subtitle: Optimal Advertising strategy with Linear Programming
-        url: blogs/linear_programming
-      - image: s&p500.jpg
-        subtitle: Using SVM algorithm to forecast S&P500 Index 
-        title: Support Vector Machine for Finance (Python)
-        url: blogs/support_vector_machine
+      - image: movie_banner.jpg
+        subtitle: Predicting movie ratings using User comments
+        title: Text Mining & Neural Network on Movie Data (R)
+        url: docs/brexit_project.html
       - image: ensemble_algos.jpg
         subtitle: Predicting London House prices
-        title: Ensemble Machine Learning (R)
-        url: blogs/ensemble_algorithms
-      - image: movie_banner.jpg
-        subtitle: TM Analysis & ANN Fit on Movie Data
-        title: Text Mining & Neural Net on Movie Data (R)
-        url: blogs/ml_final_project
+        title: Regression with Ensemble algorithms (R)
+        url: docs/ensemble_algorithms.html
+      - image: BBC_project.jpg
+        subtitle: BBC iPlayer customer segmentation
+        title: Segmentation with Clustering algorithms (PY)
+        url: docs/clustering_project_PY.html
+      - image: advertising_banner.jpg
+        title: The Power of Optimisation (PY)
+        subtitle: Optimal Advertising strategy with Linear Programming
+        url: docs/workshop1_francesco_nicoli.html
+      - image: s&p500.jpg
+        subtitle: Using SVM algorithm to forecast S&P500 Index
+        title: Support Vector Machine for Finance (PY)
+        url: blogs/support_vector_machine
+      
+      
       
   two:
-    buttonText: Get Started
+    buttonText: About me
     enable: yes
 #    subtitle: "Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero.
 #      \r\n    Mauris aliquet magna magna sed nunc rhoncus pharetra. \r\n    Pellentesque
@@ -116,5 +117,5 @@ params:
 #      pellentesque lorem ipsum dolor. \r\n    Nullam et orci eu lorem consequat tincidunt.
 #      Vivamus et sagittis libero.\r\n    Mauris aliquet magna magna sed nunc rhoncus
 #      amet pharetra et feugiat tempus."
-    title: Explore the blogs, get started!
-    url: blogs
+    title: Do you want to know more about me?
+    url: blogs/biography1

@@ -14579,7 +14579,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="NLP-IMPLEMENTATION-ON-ACCOUNTING-TEXT-DATA">NLP IMPLEMENTATION ON ACCOUNTING TEXT DATA<a class="anchor-link" href="#NLP-IMPLEMENTATION-ON-ACCOUNTING-TEXT-DATA">&#182;</a></h1>
+<h1 id="NLP-BASED-COST-SYNERGY-ANALYSIS">NLP-BASED COST SYNERGY ANALYSIS<a class="anchor-link" href="#NLP-BASED-COST-SYNERGY-ANALYSIS">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -14590,7 +14590,9 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>The following work aims at tuning an algorithm that uses an expense's most granular label (<code>Commodity Name</code>) to predict the three least granular (most general) labels of the same expense (<code>Category Name, Subcategory Name, Segment Name</code>). The model was trained on the <strong>UNSPC dataset</strong>, a dataset that classifies products &amp; items in a standardised way for industrial purposes.</p>
+<p>The project is the result of numerous post-merger integration failures resulting from <strong>long lead times to synergy realisation</strong>. It is imperative for entities involved in an M&amp;A transaction to quickly identify <strong>overlapping costs</strong>
+and take rapid action in eliminating those costs. Here, I aim at building a model that can predict the spend category a general cost item belongs to based on the text description of the item itself. Hence, the goal is to <strong>predict common spend categories</strong>, for the items of both the target and the acquirer, in order to gauge the <strong>cost overlaps</strong> for each cost category and act upon the most "synergy-promising".</p>
+<p>This will be done by tuning an <strong>NLP algorithm</strong> that uses an expense's <strong>most granular label</strong> (<code>Commodity Name</code>) to predict the <strong>three least granular</strong> (most general) labels of the same expense (<code>Category Name, Subcategory Name, Segment Name</code>). The model was trained on the <strong>UNSPC dataset</strong>, a dataset that classifies products &amp; items in a standardised way for industrial purposes. After appropriate training, the model will be used on testing data to predict the common cost category for each item in each entity and analyse and prioritise the most significant synergy opportunities.</p>
 
 </div>
 </div>
@@ -14659,7 +14661,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>The <strong>UNSPC</strong> (United Nations Standard Products and Services Code) is a classification system that provides a <em>standardised</em> way of <em>categorising</em> products and services. For the purpose of the project, we added two higher-level categories to the four categories given in the original dataset. Here is an overview of the final version of the <strong>training dataset</strong>.</p>
+<p>The <strong>UNSPC</strong> (United Nations Standard Products and Services Code) is a classification system that provides a <em>standardised</em> way of <em>categorising</em> products and services. For the purpose of the project, we added two higher-level, less granular categories (<code>Category Name</code>, <code>Subcategory Name</code>) to the four categories given in the original dataset. Here is an overview of the final version of the <strong>training dataset</strong>.</p>
 
 </div>
 </div>
@@ -15189,7 +15191,7 @@ class="
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>In order to predict the three highest levels in the spending heirarchy (Category, Subcategory, and Segment) using the lowest level (Commodity), we will need to transform the commodity names into a format that is suitable for machine learning. Thus, we will use a TF-IDF vectorizer to transpose these character strings into a matrix of 0s and 1s. In this matrix, each row will be represented by a commodity name (document), and each column by a word that appears in some (the exact number is to be tuned) of the commodity names present in the dataset.</p>
+<p>In order to predict the three highest levels in the spending heirarchy (Category, Subcategory, and Segment) using the lowest level (Commodity), we will need to transform the commodity names into a format that is suitable for machine learning. Thus, we will use a <strong>TF-IDF vectorizer</strong> to transpose these character strings into a matrix of 0s and 1s. In this matrix, each row will be represented by a commodity name (document), and each column by a word that appears in some (the exact number is to be tuned) of the commodity names present in the dataset.</p>
 
 </div>
 </div>
@@ -15201,7 +15203,7 @@ class="
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Before passing the input data (the commodity names) through the vectorizer to get it in a format that can be used for prediction, we believed it would be useful to first lemmatize the words that appear in the list of commodity names. Lemmatization is the process of grouping together the different inflected forms of a word so they can be analyzed as a single item. Lemmatization is similar to stemming but it doesn't reduce some words to the point that they are no longer in the dictionary (which happens in many cases with stemming). Thus, lemmatization links words with similar meanings to one word. Lemmatization is useful for our task because, without it, some words ("egg") and their plural form ("eggs") or other inflected forms of it would be considered as entirely different objects, when in reality they refer to the same thing. Grouping these different forms together should increase the performance of our model.</p>
+<p>Before passing the input data (the commodity names) through the vectorizer to get it in a format that can be used for prediction, we believed it would be useful to first <strong>lemmatize</strong> the words that appear in the list of commodity names. Lemmatization is the process of <strong>grouping together the different inflected forms of a word</strong> so they can be analyzed as a single item. Lemmatization is similar to stemming but it doesn't reduce some words to the point that they are no longer in the dictionary (which happens in many cases with stemming). Thus, lemmatization links words with similar meanings to one word. Lemmatization is useful for our task because, without it, some words ("egg") and their plural form ("eggs") or other inflected forms of it would be considered as entirely different objects, when in reality they refer to the same thing. Grouping these different forms together should increase the performance of our model.</p>
 
 </div>
 </div>
@@ -17122,6 +17124,30 @@ class="
 
 </div>
 
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Final-Comments">Final Comments<a class="anchor-link" href="#Final-Comments">&#182;</a></h2>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Now we can safely conclude we obtained an extremely accurate model, with an <strong>F1-score</strong> on the testing set of approximately <strong>90%</strong>. Moreover, it is crucial to highlight that the model has been trained to maximise <strong>robustness</strong> besides accuracy. In fact, the decision to <strong>Lemmatize</strong> words and exclude the lemmas that were not in the dictionary aims at preventing the model's overfitting. In fact, the training set only includes words that potentially have a <strong>substantial meaning</strong> in any context.</p>
+<p>The model is now ready to be applied to M&amp;A transactions involving entities in <strong>any industry</strong>.</p>
+
+</div>
+</div>
+</div>
 </div>
 </body>
 
